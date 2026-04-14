@@ -24,12 +24,14 @@ Open dan [http://localhost:8000](http://localhost:8000) in je browser.
 
 ### Publiceren op GitHub Pages
 
-1. Zet je code in een GitHub repository (bijvoorbeeld `zeelandtimemachine`).
-2. Ga in GitHub naar je repository > Settings > Pages.
-3. Kies bij "Source" de branch (meestal `main` of `master`) en selecteer de map `public` als root ("/public").
-4. Sla op. Je site wordt nu automatisch gepubliceerd op `https://<gebruikersnaam>.github.io/<repo-naam>/`.
+GitHub Pages ondersteunt alleen de root (`/`) of de map `docs/` als publicatiemap. Volg deze stappen:
 
-Let op: Zet je startbestand in de map `public` en zorg dat het `index.html` heet.
+1. Hernoem de map `public` naar `docs` in je repository.
+2. Zet al je webbestanden (zoals `index.html`, `app.js`, `style.css`) in de map `docs`.
+3. Commit en push deze wijziging naar GitHub.
+4. Ga in GitHub naar je repository > Settings > Pages.
+5. Kies bij "Source" de branch (meestal `main` of `master`) en selecteer de map `docs` als root.
+6. Sla op. Je site wordt nu automatisch gepubliceerd op `https://<gebruikersnaam>.github.io/<repo-naam>/`.
 
 Meer info: https://pages.github.com/
 

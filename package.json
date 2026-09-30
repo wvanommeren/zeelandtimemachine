@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "all-the-cities": "^3.1.0",
+    "maplibre-gl": "^5.23.0",
+    "maplibre-gl-basemap-control": "^0.14.3"
+  }
+}

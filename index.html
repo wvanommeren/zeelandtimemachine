@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zeeland Time Machine</title>
-  <link href="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.23.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl-raster@0.14.15/dist/maplibre-gl-raster.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl-basemap-control@0.14.3/dist/maplibre-gl-basemap-control.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
-    <h1>Zeeland Time Machine</h1>
     <h2>Delta Archieven</h2>
   </header>
+  <img class="site-logo" src="data/za-social-media.png" alt="Zeeland Time Machine Logo" width="250">
   <main>
-    <div id="map"></div>
-    <div id="lod-info"></div>
+    <aside id="archive-panel" aria-label="Historische kaarten en foto's">
+      <h3 class="archive-panel__title">Doorzoek het archief</h3>
+      <input type="search" id="archive-search" class="archive-panel__search" placeholder="Zoek op naam of jaar" aria-label="Zoek in historische kaarten en foto's">
+      <ul id="archive-list" class="archive-panel__list"></ul>
+    </aside>
+    <div id="interactive-map"></div>
+    <div id="slider-control">
+      <div class="slider-header">
+        <span id="year-value">Geselecteerd jaar: 1970</span>
+      </div>
+      <input type="range" id="year-slider" class="slider" min="1950" max="1990" value="1970">
+      <div class="slider-ticks">
+        <span>1950</span>
+        <span>1960</span>
+        <span>1970</span>
+        <span>1980</span>
+        <span>1990</span>
+      </div>
+    </div>
   </main>
-  <script src="https://unpkg.com/maplibre-gl@3.6.1/dist/maplibre-gl.js"></script>
-  <script src="app.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "maplibre-gl": "https://esm.sh/maplibre-gl@5.23.0",
+        "maplibre-gl-raster": "https://esm.sh/maplibre-gl-raster@0.14.15?external=maplibre-gl",
+        "maplibre-gl-basemap-control": "https://esm.sh/maplibre-gl-basemap-control@0.14.3?external=maplibre-gl"
+      }
+    }
+  </script>
+  <script type="module" src="./app.js"></script>
 </body>
+
 </html>
